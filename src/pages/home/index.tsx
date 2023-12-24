@@ -5,6 +5,7 @@ import CommunityComponent from "../../components/community";
 import { COMMUNITIES_API, HOMES_API } from "../../constants";
 import { Community, Home } from "../../types";
 import { SpinnerContainer } from "./styles";
+import { css } from "@emotion/css";
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -76,7 +77,13 @@ const HomePage = () => {
       )}
       {!isLoading && (
         <div>
-          <h1>Communities</h1>
+          <h1
+            className={css`
+              font-weight: 700;
+              color: #07424f;
+            `}>
+            Listings by Community
+          </h1>
           <Row gutter={[16, 16]}>
             {communities.map((community) => (
               <Col xs={24} sm={24} md={12} lg={8} xl={8} key={community.id}>

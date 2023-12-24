@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+# Getting Started with Openhouse AI Listings by Community App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+**This application is built using React with TypeScript, showcasing modern web application practices and interactive features. Key aspects of this project include:**
 
-In the project directory, you can run:
+- **React and TypeScript**: Used React combined with TypeScript for the application.
+- **RESTful API Integration**: Utilizing the `axios` package to handle network requests to REST APIs.
+- **Routing**: Implemented using the `react-router-dom` package to enable navigation between different components.
+- **Styling**: Styled using `ant.design` and `emotion` packages for a sleek and responsive UI.
+- **Error Handling**: Used modal pop-ups to notify users of errors during data fetching.
+- **Loading State**: Implements a skeleton component to enhance user experience during data fetching.
+- **Interactive Elements**: Features hover effects on community posts, revealing a 'contact' button (Note: button functionality not implemented).
+- **Responsive Design**: Adapts responsive design to various screen sizes, ensuring full functionality on mobile devices.
 
-### `npm start`
+  <br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to Run the Application
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. **Clone the Repository**:
+   ```
+   git clone https://github.com/Jaehan-Kevin-Kim/openhouse-ai-coding-exercise.git
+   ```
+2. **Install Dependencies of the application**:
+   ```
+   npm install
+   ```
+3. **Start the Application**:
 
-### `npm test`
+   ```
+   npm start
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   This will launch the application on `localhost:3000` (or your default React port).
 
-### `npm run build`
+   <br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Things To do
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Backend Integration**: Implement pagination for front-end, and back-end, and lazy loading to manage extensive data efficiently.
+- **Advanced Sorting Options**: Expand sorting functionalities to include descending order by community name in alphabetical order, price, and other fields.
+- **Optimize Card Sizing**: Refining the responsive design to optimize card sizes dynamically as the screen width changes.
+- **Unify Emotion styling**: Standardizing the code styling to use styled or inline-style only. I used both styled and inline styling methods with Emotion to demonstrate the ability.
+- **Dark Mode**: Introducing a dark mode option for enhanced user experience and accessibility.
