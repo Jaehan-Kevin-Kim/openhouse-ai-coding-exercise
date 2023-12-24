@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import CommunityComponent from "../../components/CommunityComponent";
 import { COMMUNITIES_API, HOMES_API } from "../../constants";
 import { Community, Home } from "../../types";
+import { Col, Row } from "antd";
 const HomePage = () => {
   const [communities, setCommunities] = useState<Community[]>([]);
   const [homes, setHomes] = useState<Home[]>([]);
@@ -53,14 +54,17 @@ const HomePage = () => {
   return (
     <div>
       <h1>Communities</h1>
-      {communities.map((community) => (
-        <CommunityComponent
-          key={community.id}
-          community={community}
-          homes={homesByCommunityId(community.id)}
-          // homes={homes.filter(home=>home.communityId === community.id)}
-        ></CommunityComponent>
-      ))}
+      <Row gutter={[16, 16]}>
+        {communities.map((community) => (
+          <Col xs={24} sm={24} md={12} lg={8} xl={8} key={community.id}>
+            <CommunityComponent
+              community={community}
+              homes={homesByCommunityId(community.id)}
+              // homes={homes.filter(home=>home.communityId === community.id)}
+            ></CommunityComponent>
+          </Col>
+        ))}
+      </Row>
       {/* <CommunityComponent></CommunityComponent> */}
     </div>
   );

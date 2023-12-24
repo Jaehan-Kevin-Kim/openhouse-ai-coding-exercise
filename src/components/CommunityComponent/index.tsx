@@ -1,7 +1,15 @@
-import axios from "axios";
-import { FC, useCallback, useEffect, useState } from "react";
-import { COMMUNITIES_API, HOMES_API } from "../../constants";
+import { css } from "@emotion/react";
+import { Card } from "antd";
+import { FC, SyntheticEvent, useCallback, useEffect, useState } from "react";
+import noImage from "../../assets/images/no-image.jpg";
 import { Community, Home } from "../../types";
+import styled from "@emotion/styled";
+
+const Image = styled.img`
+  object-fit: cover;
+  width: 300px;
+  height: 230px;
+`;
 
 interface Props {
   community: Community;
@@ -50,19 +58,41 @@ const CommunityComponent: FC<Props> = ({ community, homes }) => {
     console.log("homes", homes);
   }, [homes, calculateAveragePrice, formatAveragePrice, community]);
 
+  const handleNoImage = useCallback(
+    (e: SyntheticEvent<HTMLImageElement, Event>) => {
+      e.currentTarget.src = noImage;
+    },
+    [],
+  );
+
   return (
-    <li>
-      <ul>Community Name: {community.name}</ul>
-      <ul>
-        <img
-          src={community.imgUrl}
+    <Card
+      hoverable
+      cover={
+        <Image
           alt={community.name}
-          width={300}
-          height={300}
+          src={community.imgUrl || noImage}
+          onError={handleNoImage}
         />
-      </ul>
-      <ul>Average price: {formattedAveragePriceInCommunity}</ul>
-    </li>
+      }>
+      <Card.Meta
+        title={community.name}
+        description={`Average price: ${formattedAveragePriceInCommunity}`}
+      />
+      {/* 
+      <div className="card">
+        <ul>Community Name: {community.name}</ul>
+        <ul>
+          <img
+            src={community.imgUrl}
+            alt={community.name}
+            width={300}
+            height={300}
+          />
+        </ul>
+        <ul>Average price: {formattedAveragePriceInCommunity}</ul>
+      </div> */}
+    </Card>
   );
 };
 
