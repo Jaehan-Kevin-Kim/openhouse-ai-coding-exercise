@@ -3,10 +3,22 @@ import { useCallback, useEffect, useState } from "react";
 import CommunityComponent from "../../components/CommunityComponent";
 import { COMMUNITIES_API, HOMES_API } from "../../constants";
 import { Community, Home } from "../../types";
-import { Col, Row } from "antd";
+import { Col, Modal, Row } from "antd";
 const HomePage = () => {
   const [communities, setCommunities] = useState<Community[]>([]);
   const [homes, setHomes] = useState<Home[]>([]);
+
+  const displayErrorModal = useCallback(() => {
+    Modal.error({
+      title: "Error",
+      content: "An error occurred during loading data. Please try again later.",
+      footer: (_, { OkBtn, CancelBtn }) => (
+        <>
+          <OkBtn />
+        </>
+      ),
+    });
+  }, []);
 
   useEffect(() => {
     const getCommunityData = async () => {
@@ -17,13 +29,10 @@ const HomePage = () => {
         const sortedCommunities = data.sort((a, b) =>
           a.name.localeCompare(b.name),
         );
-        // console.log(
-        //   "get community result: ",
-        //   data.sort((a, b) => a.name.localeCompare(b.name)),
-        // );
         setCommunities(sortedCommunities);
       } catch (error) {
         console.error("Error for getting community data", error);
+        displayErrorModal();
       }
     };
 
@@ -34,10 +43,10 @@ const HomePage = () => {
     const getHomeData = async () => {
       try {
         const { data }: { data: Home[] } = await axios.get(HOMES_API);
-
         setHomes(data);
       } catch (error) {
         console.error("Error for getting home data", error);
+        displayErrorModal();
       }
     };
 
@@ -65,7 +74,6 @@ const HomePage = () => {
           </Col>
         ))}
       </Row>
-      {/* <CommunityComponent></CommunityComponent> */}
     </div>
   );
 };
