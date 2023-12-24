@@ -13,6 +13,7 @@
 - **Loading State**: Implements a skeleton component to enhance user experience during data fetching.
 - **Interactive Elements**: Features hover effects on community posts, revealing a 'contact' button (Note: button functionality not implemented).
 - **Responsive Design**: Adapts responsive design to various screen sizes, ensuring full functionality on mobile devices.
+- **Handling CORS Error with Proxy Configuration**: Used Proxy configuration to avoid CORS error in development environment.
 
   <br>
 
