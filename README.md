@@ -9,6 +9,7 @@
 - **Routing**: Implemented using the `react-router-dom` package to enable navigation between different components.
 - **Styling**: Styled using `ant.design` and `emotion` packages for a sleek and responsive UI.
 - **Error Handling**: Used modal pop-ups to notify users of errors during data fetching.
+- **Invalid Data Handling**: Used default no-image png file to handle image retrieving error, and displayed 'N/A' if average price is not exist in community
 - **Loading State**: Implements a skeleton component to enhance user experience during data fetching.
 - **Interactive Elements**: Features hover effects on community posts, revealing a 'contact' button (Note: button functionality not implemented).
 - **Responsive Design**: Adapts responsive design to various screen sizes, ensuring full functionality on mobile devices.
