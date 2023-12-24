@@ -10,7 +10,7 @@ export type HomeType = "House" | "Townhouse" | "Duplex" | "Conde";
 export interface Community {
   id: string;
   name: string;
-  imageUrl: string;
+  imgUrl: string;
   group: string;
 }
 
