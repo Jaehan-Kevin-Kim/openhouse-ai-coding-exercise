@@ -86,7 +86,14 @@ const HomePage = () => {
           </h1>
           <Row gutter={[16, 16]}>
             {communities.map((community) => (
-              <Col xs={24} sm={24} md={12} lg={8} xl={8} key={community.id}>
+              <Col
+                xs={24}
+                sm={24}
+                md={12}
+                lg={8}
+                xl={6}
+                xxl={4}
+                key={community.id}>
                 <CommunityComponent
                   community={community}
                   homes={homesByCommunityId(community.id)}></CommunityComponent>
