@@ -1,5 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/home";
 import "antd/dist/reset.css";
 
 // import "./App.css";

@@ -1,33 +1,15 @@
 // import { css } from "@emotion/react";
 import { css } from "@emotion/css";
-import { Button, Card, Divider } from "antd";
+import { Button, Card } from "antd";
 import { FC, SyntheticEvent, useCallback, useEffect, useState } from "react";
 import noImage from "../../assets/images/no-image.jpg";
 import { Community, Home } from "../../types";
-import styled from "@emotion/styled";
-
-const CardContainer = styled.div`
-  position: relative;
-`;
-
-const CardImage = styled.img`
-  object-fit: cover;
-  /* width: 300px; */
-  height: 230px;
-`;
-
-const CardDescription = styled.span`
-  color: #dd6a15;
-  font-weight: 600;
-`;
-
-const CardComponent = styled(Card)`
-  text-align: center;
-
-  &:hover {
-    opacity: 0.3;
-  }
-`;
+import {
+  CardComponent,
+  CardContainer,
+  CardDescription,
+  CardImage,
+} from "./styles";
 
 interface Props {
   community: Community;
@@ -87,35 +69,9 @@ const CommunityComponent: FC<Props> = ({ community, homes }) => {
   );
 
   return (
-    // <div
-    //   className={css`
-    //     width: 100%;
-    //   `}>
-    //   <div
-    //     className={css`
-    //       position: relative;
-    //       padding-top: 66.67%;
-    //     `}>
-    //     <div
-    //       className={css`
-    //         position: absolute;
-    //         top: 0;
-    //         left: 0;
-    //         right: 0;
-    //         bottom: 0;
-    //       `}>
-    // <Card
     <CardContainer
       onMouseEnter={() => setIsCardHovered(true)}
-      onMouseLeave={() => setIsCardHovered(false)}
-      /* className={css` */
-      /* transition: opacity 0.3s; */
-      /* position: relative;
-        /* overflow: hidden; */
-      /* width: 100%;
-        height: 100%; */
-      /* `} */
-    >
+      onMouseLeave={() => setIsCardHovered(false)}>
       <CardComponent
         hoverable
         cover={
